@@ -1,0 +1,171 @@
+@import 'var';
+
+.questions {
+    position: relative;
+    display: none;
+    width: 100%;
+    opacity: 1;
+
+
+    &__bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: $future;
+        transform: translateX(100%);
+        transition: .5s;
+
+        &.visible {
+            transform: translateX(0);
+            transition: all 1s;
+        }
+    }
+
+    &__left {
+        position: relative;
+        width: 100%;
+        z-index: 3;
+    }
+
+    &__right {
+        position: absolute;
+        right: 0;
+        width: 100%;
+        max-width: calc(634 / 2820 * 100%);
+        min-height: 100%;
+        background-color: $qing-yellow;
+        opacity: 0;
+        z-index: 2;
+        transition: opacity .5s;
+
+
+        &.visible {
+            opacity: 1;
+            transition: opacity 1s .7s;
+        }
+    }
+
+    &__container {
+        position: relative;
+        padding-top: 105px;
+        padding-bottom: 167px;
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__title {
+        margin-bottom: 42px;
+        max-width: 1075px;
+        color: $white;
+        font-family: 'Oswald';
+        font-size: 114px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 129%;
+        letter-spacing: 1.71px;
+        text-transform: uppercase;
+        transform: translateX(-200px);
+        opacity: 0;
+        transition: opacity .1s;
+
+
+        &.visible {
+            opacity: 1;
+            transition: opacity 1s 1s;
+        }
+    }
+
+    &__pagination {
+        position: absolute;
+        left: 61px;
+        bottom: 326px;
+        opacity: 0;
+        transition: opacity 1s ease;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__digits {
+        position: absolute;
+        top: 105px;
+        left: -120px;
+        color: $white;
+        font-family: Oswald;
+        font-size: 108px;
+        font-weight: 700;
+        line-height: 100%;
+        text-transform: uppercase;
+        z-index: 2;
+        opacity: 0;
+
+        transition: opacity .1s;
+
+        &.visible {
+            opacity: 1;
+            transition: opacity 1s 1s;
+        }
+    }
+
+    &__digit-item:nth-child(2) {
+        color: $manila-tint;
+    }
+}
+
+.slide__content {
+    position: relative;
+    max-width: 1065px;
+    color: $white;
+    font-family: 'Montserrat';
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 41px;
+    z-index: 1;
+}
+
+.slider {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity .1s;
+
+    &.visible {
+        opacity: 1;
+        transition: opacity 1s .5s;
+    }
+
+    &__wrap {
+        position: relative;
+        justify-content: center;
+    }
+
+    &__btn {
+        position: absolute;
+        transform: translateY(-50%);
+
+        &-prev {
+            top: 40%;
+            left: -185px;
+        }
+
+        &-next {
+            left: 0;
+            bottom: 28%;
+            transform: translate(-100%, -50%);
+        }
+    }
+
+    &__bg {
+        position: absolute;
+        top: -30px;
+        left: -45px
+    }
+}
