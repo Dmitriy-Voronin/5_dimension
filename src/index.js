@@ -5,10 +5,9 @@ import logoSrc from './img/logo.svg';
 const siteBg = document.querySelector('.site-bg');
 const header = document.querySelector('.header');
 const heroBg = document.querySelector('.hero__bg');
-const logo = document.querySelector('.hero__logo-img');
+const logoWrap = document.querySelector('.header__logo');
 const heroInfowrap = document.querySelector('.hero__info-wrap');
 const heroAuthorImgWrap = document.querySelector('.hero__author-img-wrap');
-const heroAuthorImg = document.querySelector('.hero__author-img');
 const heroSignupBtn = document.querySelector('.signup__btn');
 const heroSignupDate = document.querySelector('.signup__date');
 const heroInfo = document.querySelector('.hero__author-info');
@@ -16,8 +15,15 @@ const heroInfoLink = document.querySelector('.hero__author-info-link-img');
 const questions = document.querySelector('.questions');
 const body = document.body;
 
-heroAuthorImg.src = heroAuthorImgSrc;
+const logo = new Image();
 logo.src = logoSrc;
+logoWrap.append(logo);
+
+const heroAuthorImg = new Image();
+heroAuthorImg.src = heroAuthorImgSrc;
+heroAuthorImgWrap.append(heroAuthorImg);
+
+
 
 setTimeout(() => {
   setTimeout(() => {
